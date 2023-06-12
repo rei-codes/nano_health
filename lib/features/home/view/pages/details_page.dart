@@ -46,7 +46,25 @@ class DetailsPage extends ConsumerWidget {
                     ),
                   ),
                   flexibleSpace: FlexibleSpaceBar(
-                    background: Image.network(item.image),
+                    background: Stack(
+                      children: [
+                        Image.network(item.image),
+                        Container(
+                          height: 200,
+                          width: double.maxFinite,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: [
+                                Colors.transparent,
+                                Colors.black.withOpacity(.50),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   actions: [
                     Padding(

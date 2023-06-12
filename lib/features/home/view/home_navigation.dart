@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nano_health/core/utils/assets.dart';
+import 'package:nano_health/features/home/view/pages/home_page.dart';
 
 import '../providers/bottom_navbar_type_provider.dart';
 import 'pages/cart_page.dart';
@@ -28,7 +29,7 @@ class HomeNavigation extends HookConsumerWidget {
       body: IndexedStack(
         index: type.index,
         children: const [
-          HomeNavigation(),
+          HomePage(),
           CartPage(),
           FavoritesPage(),
           ProfilePage(),

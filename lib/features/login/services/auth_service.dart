@@ -5,22 +5,16 @@ import 'package:nano_health/core/services/dio_service.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../models/login_request.dart';
+import 'base.dart';
 
 part 'auth_service.g.dart';
-
-abstract interface class IAuthService {
-  const IAuthService(this.dio);
-  final Dio dio;
-
-  Future<String> login(LoginRequest model);
-}
 
 @Riverpod(keepAlive: true)
 AuthService authService(AuthServiceRef ref) {
   return AuthService(ref.watch(dioServiceProvider));
 }
 
-class AuthService extends IAuthService {
+final class AuthService extends BaseAuthService {
   const AuthService(super.dio);
 
   @override
